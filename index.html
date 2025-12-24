@@ -256,6 +256,28 @@ JOIN dbo.DimCustomer AS d
   <div class="proj" style="padding:18px">
     <div class="stack">
 
+    div class="row">
+      <div>
+        <strong>Bachelor of Science in Mathematics</strong><br>
+        <span class="label">University of Calgary</span>
+      </div>
+      <button id="openBSc" class="btn secondary" type="button">
+        View Degree
+      </button>
+    </div>
+      
+
+     <div class="row">
+      <div>
+        <strong>Academic Scholarship Award</strong><br>
+        <span class="label">Merit-based scholarship recognition</span>
+      </div>
+      <button id="openScholarship" class="btn secondary" type="button">
+        View Letter
+      </button>
+    </div>
+      
+
       <!-- .NET Certificate -->
       <div class="row">
         <div>
@@ -267,15 +289,7 @@ JOIN dbo.DimCustomer AS d
         </button>
       </div>
 
-      <div class="row">
-  <div>
-    <strong>Academic Scholarship Award</strong><br>
-    <span class="label">Merit-based scholarship recognition</span>
-  </div>
-  <button id="openScholarship" class="btn secondary" type="button">
-    View Letter
-  </button>
-</div>
+     
 
       <!-- Machine Learning Practitioner -->
       <div class="row" style="flex-direction:column; gap:10px">
@@ -354,6 +368,22 @@ JOIN dbo.DimCustomer AS d
   </div>
 </div>
 
+  <div id="bscModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="bscTitle">
+  <div class="modal-card">
+    <div class="modal-head">
+      <strong id="bscTitle">Bachelor of Science in Mathematics</strong>
+      <button id="closeBSc" class="icon-btn" type="button">Close</button>
+    </div>
+    <div class="modal-body">
+      <img
+        src="bsc-mathematics-degree.jpg"
+        alt="Bachelor of Science in Mathematics Degree"
+      />
+    </div>
+  </div>
+</div>
+
+
 
   <section id="contact" style="margin-top:28px">
     <h2 style="font-size:28px; margin:0 0 14px">Contact</h2>
@@ -407,6 +437,38 @@ JOIN dbo.DimCustomer AS d
     }
   });
 </script>
+
+  <script>
+(function(){
+  const modal = document.getElementById('bscModal');
+  const open  = document.getElementById('openBSc');
+  const close = document.getElementById('closeBSc');
+
+  function openModal(){
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  open && open.addEventListener('click', openModal);
+  close && close.addEventListener('click', closeModal);
+
+  modal && modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+})();
+</script>
+
 
 </body>
 </html>
