@@ -267,6 +267,16 @@ JOIN dbo.DimCustomer AS d
         </button>
       </div>
 
+      <div class="row">
+  <div>
+    <strong>Academic Scholarship Award</strong><br>
+    <span class="label">Merit-based scholarship recognition</span>
+  </div>
+  <button id="openScholarship" class="btn secondary" type="button">
+    View Letter
+  </button>
+</div>
+
       <!-- Machine Learning Practitioner -->
       <div class="row" style="flex-direction:column; gap:10px">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap">
@@ -327,6 +337,20 @@ JOIN dbo.DimCustomer AS d
       <!-- Update the path/filename to your actual image -->
       <img src="netcertificate.jpg" alt=".NET Application Development Certificate" />
     </div>
+  </div>
+</div>
+
+  <div id="scholarshipModal" class="modal">
+  <div class="modal-content large">
+    <button id="closeScholarship" class="close">×</button>
+    <h3>Scholarship Award Letter</h3>
+
+    <iframe
+      src="scholarship-letter.pdf"
+      width="100%"
+      height="600px"
+      style="border:none; margin-top:12px"
+    ></iframe>
   </div>
 </div>
 
