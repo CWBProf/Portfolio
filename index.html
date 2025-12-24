@@ -393,5 +393,20 @@ JOIN dbo.DimCustomer AS d
   })();
 </script>
 
+  <script>
+  const scholarshipModal = document.getElementById("scholarshipModal");
+  const openScholarship = document.getElementById("openScholarship");
+  const closeScholarship = document.getElementById("closeScholarship");
+
+  openScholarship.onclick = () => scholarshipModal.style.display = "flex";
+  closeScholarship.onclick = () => scholarshipModal.style.display = "none";
+
+  window.addEventListener("click", (e) => {
+    if (e.target === scholarshipModal) {
+      scholarshipModal.style.display = "none";
+    }
+  });
+</script>
+
 </body>
 </html>
